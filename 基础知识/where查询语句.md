@@ -32,6 +32,8 @@ select 查询列表 from 表1 (别名) where 筛选条件;
 |>=|大于等于|
 |BETWEEN … AND … |在指定的两个值之间|
 | IS NULL | 检查空值 |
+|IN(…,…,…)|匹配括号内的任意值|
+|NOT|取反|
   
 </font>
 
