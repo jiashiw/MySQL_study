@@ -12,12 +12,12 @@ order by排序列表    ⑧
 limit 起始条目索引，条目数;  ⑨
 ```
 
-## 1. where语句
+## where语句
 语法如下：
 ```
 select 查询列表 from 表1 (别名) where 筛选条件;
 ```
-#### 操作符说明
+##### 1.操作符说明
 
 <font size=1>
   
@@ -35,12 +35,12 @@ select 查询列表 from 表1 (别名) where 筛选条件;
   
 </font>
 
-### 多个where子句同时查询
-<font size=1> 有2种方式可使用
-<br>①以AND子句的方式；②以OR子句的方式</br>
-若AND和OR同时存在1条sql语句中，那优先处理AND语句，再处理OR语句。可以通过加上()括号来解决这个问题</font>
+##### 2.多个where子句同时查询
+> <font size=1> 有2种方式可使用
+> <br>①以AND子句的方式；②以OR子句的方式</br>
+> 若AND和OR同时存在1条sql语句中，那优先处理AND语句，再处理OR语句。可以通过加上()括号来解决这个问题</font>
 
-语法如下
+语法如下：
 ```
 select 查询列表
 from 表1 (别名) 
@@ -49,4 +49,15 @@ where 筛选条件1 AND 筛选条件2;
 select 查询列表
 from 表1 (别名) 
 where 筛选条件1 OR 筛选条件2;
+```
+
+##### 3.where与in的搭配
+> in的作用：指定条件范围，范围内的每个条件都可以进行匹配；实际作用与or相似
+> 优点：①更直观；②更容易管理；③比or执行更快；<font color=red>④可以包括其他select语句(★）</font>
+
+语法：
+```
+select 查询列表
+from 表1 (别名) 
+where 筛选项 in（…,…,…）;
 ```
