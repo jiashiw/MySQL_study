@@ -53,11 +53,20 @@ where 筛选条件1 OR 筛选条件2;
 
 ##### 3.where与in的搭配
 > in的作用：指定条件范围，范围内的每个条件都可以进行匹配；实际作用与or相似
-> 优点：①更直观；②更容易管理；③比or执行更快；<font color=red>④可以包括其他select语句(★）</font>
+> 优点：①更直观；②更容易管理；③比or执行更快；④可以包括其他select语句(★）
 
 语法：
 ```
 select 查询列表
 from 表1 (别名) 
 where 筛选项 in（…,…,…）;
+```
+
+##### 4.where与NOT的搭配
+> NOT的作用：否认它之后所跟的任何条件，支持对IN、BETWEEN、EXISTS子句取反
+语法：
+```
+select 查询列表
+from 表1 (别名) 
+where 筛选项 NOT in（…,…,…）;
 ```
